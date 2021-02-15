@@ -1,0 +1,9 @@
+sudo: required
+services:
+ - docker
+
+before_install:
+  - docker build -t vncgrvs/docker-tut -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true vncgrvs/docker-tut npm run test -- --coverage
