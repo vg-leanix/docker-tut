@@ -7,3 +7,14 @@ before_install:
 
 script:
   - docker run -e CI=true vncgrvs/docker-tut npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-tut"
+  env: "Dockertut-env"
+  bucket_name: "elasticbeanstalk-us-east-2-665598725239"
+  bucket_path: "docker-tut"
+  on:
+    branch: master
+   
