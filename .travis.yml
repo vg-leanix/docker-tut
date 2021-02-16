@@ -3,10 +3,10 @@ services:
  - docker
 
 before_install:
-  - docker build -t vncgrvs/docker-tut -f Dockerfile.dev .
+  - docker build -t vncgrvs/react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true vncgrvs/docker-tut npm run test -- --coverage
+  - docker run -e CI=true vncgrvs/react npm run test -- --coverage
 
 deploy:
   - provider: elasticbeanstalk
