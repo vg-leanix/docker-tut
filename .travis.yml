@@ -21,7 +21,7 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
   
   - provider: script
-    script: bash run.sh
+    script: bash run.sh $LIX_TOKEN
 
 
 
