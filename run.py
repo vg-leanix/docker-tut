@@ -28,7 +28,7 @@ def cli():
 
 
 def build_ldif(version, timestamp, repo, ldif):
-    ldif['content'][0]['data']['last_deployed'] = timestamp
+    ldif['content'][0]['data']['last_deployed'] = local_timestamp
     ldif['content'][0]['data']['version'] = version
     ldif['content'][0]['data']['repo'] = repo
     return json.dumps(ldif)
