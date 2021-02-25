@@ -17,6 +17,7 @@
                 "stage": "dev",
                 "last_deployed":"test",
                 "version":"test",
+                "repo":"",
                 "links": {
                     "wiki": "https://github.com/leanix-public/leanix-cicd-examples/blob/main/metadata/sample.json"
                 },
