@@ -9,8 +9,8 @@ import click
 with open('ldif.json') as ldif:
     ldif = json.load(ldif)
 
-api_token = data['leanix']['apitoken']
-workspace_id = data['leanix']['workspace_id']
+# api_token = data['leanix']['apitoken']
+# workspace_id = data['leanix']['workspace_id']
 version = 10
 timestamp = datetime.now().strftime("%d-%m-%Y %H:%M")
 
