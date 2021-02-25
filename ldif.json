@@ -1,0 +1,34 @@
+{
+    "connectorType": "createMicroService",
+    "connectorId": "1",
+    "connectorVersion": "1.0.0",
+    "lxVersion": "1.0.0",
+    "lxWorkspace": "fb6adace-56d4-4406-a196-9fd25f713b85",
+    "description": "Imports Cloudockit data into LeanIX",
+    "processingDirection": "inbound",
+    "processingMode": "partial",
+    "content": [
+        {
+            "type": "Application",
+            "id": "react-app-helloWorld",
+            "data": {
+                "name": "Hello World React App",
+                "description": "This Hello World App deploys to AWS Beanstalk",
+                "stage": "dev",
+                "links": {
+                    "wiki": "https://github.com/leanix-public/leanix-cicd-examples/blob/main/metadata/sample.json"
+                },
+                "team":"trailblazer"
+
+               
+            }
+        },
+        {
+            "type": "Team",
+            "id": "trailblazer",
+            "data": {
+                "name": "Trailblazer"
+            }
+        }
+    ]
+}

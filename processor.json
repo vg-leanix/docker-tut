@@ -1,0 +1,116 @@
+{
+    "processors": [
+        {
+            "processorType": "inboundFactSheet",
+            "type": "Application",
+            "identifier": {
+                "external": {
+                    "id": {
+                        "expr": "${content.id}"
+                    },
+                    "type": {
+                        "expr": "externalId"
+                    }
+                }
+            },
+            "filter": {
+                "exactType": "Application"
+            },
+            "updates": [
+                {
+                    "key": {
+                        "expr": "name"
+                    },
+                    "values": [
+                        {
+                            "expr": "${data.name}"
+                        }
+                    ]
+                },
+                {
+                    "key": {
+                        "expr": "description"
+                    },
+                    "values": [
+                        {
+                            "expr": "${data.description}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "processorType": "inboundFactSheet",
+            "type": "Team",
+            "identifier": {
+                "external": {
+                    "id": {
+                        "expr": "${content.id}"
+                    },
+                    "type": {
+                        "expr": "externalId"
+                    }
+                }
+            },
+            "filter": {
+                "exactType": "Team"
+            },
+            "updates": [
+                {
+                    "key": {
+                        "expr": "name"
+                    },
+                    "values": [
+                        {
+                            "expr": "${data.name}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "processorType": "inboundRelation",
+            "processorName": "Rel from Microservice to Team",
+            "processorDescription": "Creates LeanIX Relations between the created or updated Microservice and Team",
+            "type": "relApplicationToTeam",
+            "filter": {
+                "exactType": "Application"
+            },
+            "from": {
+                "external": {
+                    "id": {
+                        "expr": "${content.id}"
+                    },
+                    "type": {
+                        "expr": "externalId"
+                    }
+                }
+            },
+            "to": {
+                "external": {
+                    "id": {
+                        "expr": "${data.team}"
+                    },
+                    "type": {
+                        "expr": "externalId"
+                    }
+                }
+            },
+            "updates": [
+                {
+                    "key": {
+                        "expr": "description"
+                    },
+                    "values": [
+                        {
+                            "expr": "Relationship Description"
+                        }
+                    ]
+                }
+                
+            ],
+            "logLevel": "debug"
+        }
+    ],
+    "variables": {}
+}
