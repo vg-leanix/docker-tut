@@ -2,6 +2,15 @@ sudo: required
 services:
  - docker
 
+language: python
+
+python:
+  - "3.8.6"
+
+install:
+ - pip install -r req.txt
+
+
 before_install:
   - docker build -t vncgrvs/react -f Dockerfile.dev .
 
@@ -9,19 +18,21 @@ script:
   - docker run -e CI=true vncgrvs/react npm run test -- --coverage
 
 deploy:
-  - provider: elasticbeanstalk
-    region: "us-east-2"
-    app: "docker-test"
-    env: "Dockertest-env"
-    bucket_name: "elasticbeanstalk-us-east-2-665598725239"
-    bucket_path: "docker-test"
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+  # - provider: elasticbeanstalk
+  #   region: "us-east-2"
+  #   app: "docker-test"
+  #   env: "Dockertest-env"
+  #   bucket_name: "elasticbeanstalk-us-east-2-665598725239"
+  #   bucket_path: "docker-test"
+  #   on:
+  #     branch: master
+  #   access_key_id: $AWS_ACCESS_KEY
+  #   secret_access_key: $AWS_SECRET_KEY
   
   - provider: script
-    script: bash run.sh $LIX_TOKEN
+    script: python run.py -t $LIX_TOKEN
+    on:
+      branch: master
 
 
 

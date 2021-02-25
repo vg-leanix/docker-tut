@@ -29,6 +29,26 @@
                 },
                 {
                     "key": {
+                        "expr": "version"
+                    },
+                    "values": [
+                        {
+                            "expr": "${data.version}"
+                        }
+                    ]
+                },
+                {
+                    "key": {
+                        "expr": "lastDeployed"
+                    },
+                    "values": [
+                        {
+                            "expr": "${data.last_deployed}"
+                        }
+                    ]
+                },
+                {
+                    "key": {
                         "expr": "description"
                     },
                     "values": [
