@@ -3,8 +3,8 @@ import requests
 from datetime import datetime
 import click
 
-with open('credentials.json') as f:
-    data = json.load(f)
+# with open('credentials.json') as f:
+#     data = json.load(f)
 
 with open('ldif.json') as ldif:
     ldif = json.load(ldif)
