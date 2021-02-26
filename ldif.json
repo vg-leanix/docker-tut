@@ -4,7 +4,7 @@
     "connectorVersion": "1.0.0",
     "lxVersion": "1.0.0",
     "lxWorkspace": "fb6adace-56d4-4406-a196-9fd25f713b85",
-    "description": "Imports Cloudockit data into LeanIX",
+    "description": "Travis CI LDIF",
     "processingDirection": "inbound",
     "processingMode": "partial",
     "content": [
