@@ -20,10 +20,10 @@ script:
 deploy:
   - provider: elasticbeanstalk
     region: "us-east-2"
-    app: "docker-test"
-    env: "Dockertest-env"
-    bucket_name: "elasticbeanstalk-us-east-2-665598725239"
-    bucket_path: "docker-test"
+    app: "demo-csm"
+    env: "Democsm-env"
+    bucket_name: "elasticbeanstalk-us-east-2-129263247607"
+    bucket_path: "demo-csm"
     on:
       branch: master
     access_key_id: $AWS_ACCESS_KEY

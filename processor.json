@@ -2,7 +2,7 @@
     "processors": [
         {
             "processorType": "inboundFactSheet",
-            "type": "Application",
+            "type": "Microservice",
             "identifier": {
                 "external": {
                     "id": {
@@ -14,7 +14,7 @@
                 }
             },
             "filter": {
-                "exactType": "Application"
+                "exactType": "Microservice"
             },
             "updates": [
                 {
@@ -92,9 +92,9 @@
             "processorType": "inboundRelation",
             "processorName": "Rel from Microservice to Team",
             "processorDescription": "Creates LeanIX Relations between the created or updated Microservice and Team",
-            "type": "relApplicationToTeam",
+            "type": "relMicroserviceToTeam",
             "filter": {
-                "exactType": "Application"
+                "exactType": "Microservice"
             },
             "from": {
                 "external": {
@@ -127,8 +127,105 @@
                         }
                     ]
                 }
-                
             ],
+            "logLevel": "debug"
+        },
+        {
+            "processorType": "inboundTag",
+            "processorName": "Tag creation",
+            "processorDescription": "Creates tags and tag groups",
+            "factSheets": {
+                "external": {
+                    "ids": "${content.id}",
+                    "type": {
+                        "expr": "externalId"
+                    }
+                }
+            },
+            "run": 1,
+            "updates": [
+                {
+                    "key": {
+                        "expr": "name"
+                    },
+                    "values": [
+                        {
+                            "expr": "${integration.valueOfForEach}"
+                        }
+                    ]
+                },
+                {
+                    "key": {
+                        "expr": "description"
+                    },
+                    "values": [
+                        {
+                            "expr": "${integration.valueOfForEach}"
+                        }
+                    ]
+                },
+                {
+                    "key": {
+                        "expr": "color"
+                    },
+                    "values": [
+                        {
+                            "expr": "#64f983"
+                        }
+                    ]
+                },
+                {
+                    "key": {
+                        "expr": "group.name"
+                    },
+                    "values": [
+                        {
+                            "expr": "Travis Tags"
+                        }
+                    ]
+                },
+                {
+                    "key": {
+                        "expr": "group.shortName"
+                    },
+                    "values": [
+                        {
+                            "expr": "travis"
+                        }
+                    ]
+                },
+                {
+                    "key": {
+                        "expr": "group.description"
+                    },
+                    "values": [
+                        {
+                            "expr": "Tags relevant for Travis"
+                        }
+                    ]
+                },
+                {
+                    "key": {
+                        "expr": "group.mode"
+                    },
+                    "values": [
+                        {
+                            "expr": "SINGLE"
+                        }
+                    ]
+                },
+                {
+                    "key": {
+                        "expr": "group.restrictToFactSheetTypes"
+                    },
+                    "values": [
+                        {
+                            "expr": "Microservice"
+                        }
+                    ]
+                }
+            ],
+            "forEach": "${data.tags}",
             "logLevel": "debug"
         }
     ],

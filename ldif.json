@@ -1,12 +1,12 @@
 {
-    "connectorType": "createMicroService",
-    "connectorId": "1",
+    "connectorType": "travis-ci",
+    "connectorId": "travis-ci",
     "connectorVersion": "1.0.0",
     "lxVersion": "1.0.0",
-    "lxWorkspace": "fb6adace-56d4-4406-a196-9fd25f713b85",
+    "lxWorkspace": "535f49de-f8f0-4f59-a1ef-9414de2d52a1",
     "description": "Travis CI LDIF",
     "processingDirection": "inbound",
-    "processingMode": "partial",
+    "processingMode": "full",
     "content": [
         {
             "type": "Application",
@@ -21,7 +21,8 @@
                 "links": {
                     "wiki": "https://github.com/leanix-public/leanix-cicd-examples/blob/main/metadata/sample.json"
                 },
-                "team":"trailblazer"
+                "team":"trailblazer",
+                "tags":["Travis"]
 
                
             }
