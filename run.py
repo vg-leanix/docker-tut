@@ -28,7 +28,7 @@ def cli():
 
 
 def build_ldif(version, timestamp, repo, ldif):
-    ldif['content'][0]['data']['last_deployed'] = local_timestamp
+    ldif['content'][0]['data']['last_deployed'] = timestamp
     ldif['content'][0]['data']['version'] = version
     ldif['content'][0]['data']['repo'] = repo
     return json.dumps(ldif)
@@ -49,7 +49,7 @@ def build(token,repo):
     access_token = response.json()['access_token']
     auth_header = 'Bearer ' + access_token
     header = {'Authorization': auth_header, "Content-Type": "application/json"}
-    new_ldif = build_ldif(version=version, timestamp=timestamp, ldif=ldif, repo=repo)
+    new_ldif = build_ldif(version=version, timestamp=local_timestamp, ldif=ldif, repo=repo)
 
     live = {'start': 'true'}
     test = {'test': 'true'}
