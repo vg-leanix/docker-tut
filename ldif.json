@@ -9,7 +9,7 @@
     "processingMode": "full",
     "content": [
         {
-            "type": "Application",
+            "type": "Microservice",
             "id": "react-app-helloWorld",
             "data": {
                 "name": "Hello World React App",
@@ -22,7 +22,7 @@
                     "wiki": "https://github.com/leanix-public/leanix-cicd-examples/blob/main/metadata/sample.json"
                 },
                 "team":"trailblazer",
-                "tags":["Travis"]
+                "tags": ["TravisCI"]
 
                
             }
