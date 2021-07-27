@@ -6,7 +6,7 @@
     "lxWorkspace": "535f49de-f8f0-4f59-a1ef-9414de2d52a1",
     "description": "Travis CI LDIF",
     "processingDirection": "inbound",
-    "processingMode": "full",
+    "processingMode": "partial",
     "content": [
         {
             "type": "Microservice",
