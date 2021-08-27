@@ -1,0 +1,12 @@
+id: cicd-connector-v2
+name: cicd-connector-v2
+description: CI/CD revamped
+self: https://github.com/leanix/cicd-connector-v2/blob/main/lx-manifest.yml
+owner: my.owner@leanix.net
+teams:
+  - cider
+products:
+  - leanix-mi
+links:
+  - name: vcs
+    url: https://github.com/leanix/cicd-connector-v2
