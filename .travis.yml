@@ -14,8 +14,8 @@ install:
 before_install:
   - docker build -t vncgrvs/react -f Dockerfile .
 
-script:
-  - docker run -e CI=true vncgrvs/react npm run test -- --coverage
+# script:
+#   - docker run -e CI=true vncgrvs/react npm run test -- --coverage
 
 deploy:
   - provider: elasticbeanstalk
