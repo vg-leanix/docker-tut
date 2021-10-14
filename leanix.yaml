@@ -1,0 +1,20 @@
+id: hello-world
+name: hello-world
+description: my first app
+self: https://github.com/leanix/cicd-connector-v2/blob/main/lx-manifest.yml
+owner: my.owner@leanix.net
+teams:
+  - cider
+products:
+  - leanix-vsm
+links:
+  - name: vcs
+    url: https://github.com/leanix/cicd-connector-v2
+sonarqube:
+  - projectId: myproject-123
+mulesoft:
+  apikeys:
+    - abc-123
+    - bcd-345
+cloudtagzzs:
+  - application
